@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+vendor/
+.pnp
+.pnp.*
+
+# Build outputs
+.next/
+out/
+dist/
+backend/storage/*.key
+
+# Environment files (examples are committed)
+.env
+.env.local
+.env.*.local
+backend/.env
+frontend/.env.local
+
+# Uploaded billing CSVs (may contain real account data)
+backend/storage/app/private/billing-csv/
+backend/storage/app/billing-csv/
+
+# Logs / caches
+*.log
+backend/bootstrap/cache/
+backend/storage/framework/cache/
+backend/storage/framework/sessions/
+backend/storage/framework/views/
+backend/storage/logs/
+frontend/.next/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
