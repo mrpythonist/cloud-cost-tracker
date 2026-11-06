@@ -1,0 +1,15 @@
+Command: npm run start -- -p 3100, then curl each dashboard route.
+Run: 2026-11-06, on this VM. The Laravel API was not running, so pages return
+their shell (data loads in the browser from the API). Server stopped after the test.
+---
+=== GET / ===
+HTTP 200, 6513 bytes, 0.862464s
+=== GET /upload ===
+HTTP 200, 7791 bytes
+=== GET /compare ===
+HTTP 200, 7547 bytes
+=== GET /budgets ===
+HTTP 200, 8642 bytes
+=== GET /api/health (no API running, expect connection refused) ===
+connection refused as expected, no Laravel API running here
+<title>Cloud Cost Tracker</title>
