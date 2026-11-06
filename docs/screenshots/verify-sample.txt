@@ -1,0 +1,41 @@
+Command: php backend/scripts/verify-sample.php
+Run: 2026-11-06, on this VM. No Composer, no database needed. Exit code 0.
+---
+== 1. Parse sample CSV ==
+  format: aws-cur, imported: 76, skipped: 0
+  PASS  CUR format detected
+  PASS  76 rows imported
+  PASS  0 rows skipped
+  PASS  AmazonEC2 normalised to EC2
+  PASS  months covered are 2026-08..2026-10
+  PASS  malformed rows skipped + reported (1 good, 3 skipped)
+== 2. Monthly totals + per-service breakdown ==
+  2026-08: $794.97
+  2026-09: $949.99
+  2026-10: $1124.02
+  PASS  Aug 2026 total is $794.97
+  PASS  Sep 2026 total is $949.99
+  PASS  Oct 2026 total is $1,124.02
+  Oct by service: EC2 $690.01 (61.39%), RDS $240.01 (21.35%), S3 $88 (7.83%), CloudFront $61 (5.43%), Lambda $45 (4%)
+  PASS  EC2 is top service in Oct
+== 3. Month-over-month comparison (Sep -> Oct) ==
+  949.99 -> 1124.02 (delta $174.03, 18.32%)
+  PASS  MoM delta is +$174.03
+  PASS  MoM delta percent is +18.32%
+  PASS  EC2 MoM delta is +$150.02
+== 4. Increasing-cost detection (threshold 20%) ==
+  FLAGGED EC2: up 27.78% vs 2026-09 (threshold 20%); rising for 2 consecutive months (539.99 -> 690.01)
+  FLAGGED Lambda: rising for 2 consecutive months (38 -> 45)
+  FLAGGED CloudFront: rising for 2 consecutive months (55.01 -> 61)
+  FLAGGED RDS: rising for 2 consecutive months (224.99 -> 240.01)
+  PASS  EC2 flagged as increasing
+  PASS  S3 not flagged
+  PASS  EC2 has 2 consecutive increases
+== 5. Budget alerts (seed budgets: overall $1,200, EC2 $600, period 2026-10) ==
+  warning: Overall spend for 2026-10 is $1124.02 — 93.7% of the $1200 budget.
+  exceeded: EC2 spend for 2026-10 is $690.01 — over the $600 budget (115% used).
+  PASS  overall budget triggers warning at 93.67% usage
+  PASS  EC2 budget triggers exceeded at 115% usage
+  PASS  no alert below 80% threshold
+
+19 passed, 0 failed.
