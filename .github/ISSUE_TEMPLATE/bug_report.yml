@@ -1,0 +1,61 @@
+name: Bug report
+description: Report a problem with the Cloud Cost Tracker
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Fill in what you can. Never attach a real
+        AWS billing export; use the synthetic file in `sample-data/` or a
+        redacted sample.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you do, and what went wrong?
+      placeholder: Uploading the sample CSV returned a 500 error.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+      placeholder: The upload should succeed and show 76 imported rows.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps, including the exact file or input used.
+      placeholder: |
+        1. Start the stack with `docker compose up --build`.
+        2. Open http://localhost:3000/upload.
+        3. Upload `sample-data/sample-aws-billing.csv`.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Versions and how you run the project.
+      placeholder: |
+        PHP 8.3, Node 20, Docker Compose, Ubuntu 24.04, Chrome 130
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or error output
+      description: Paste relevant log output. Remove any credentials, keys, or account IDs first.
+      render: shell
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I checked the existing issues and this bug has not been reported yet.
+          required: true
+        - label: I did not attach a real AWS billing export or any credentials.
+          required: true
