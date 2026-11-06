@@ -1,0 +1,33 @@
+Command: find backend -name '*.php' | while read f; do php -l "$f"; done
+Run: 2026-11-06, PHP 8.3.6 CLI, on this VM. All 30 PHP files: no syntax errors.
+---
+No syntax errors detected in backend/app/Http/Controllers/Api/AlertController.php
+No syntax errors detected in backend/app/Http/Controllers/Api/BudgetController.php
+No syntax errors detected in backend/app/Http/Controllers/Api/ReportController.php
+No syntax errors detected in backend/app/Http/Controllers/Api/UploadController.php
+No syntax errors detected in backend/app/Http/Controllers/Controller.php
+No syntax errors detected in backend/app/Http/Requests/UploadCsvRequest.php
+No syntax errors detected in backend/app/Models/BillingRecord.php
+No syntax errors detected in backend/app/Models/BillingUpload.php
+No syntax errors detected in backend/app/Models/Budget.php
+No syntax errors detected in backend/app/Models/BudgetAlert.php
+No syntax errors detected in backend/app/Services/BudgetChecker.php
+No syntax errors detected in backend/app/Services/CostAnalyzer.php
+No syntax errors detected in backend/app/Services/CsvParser.php
+No syntax errors detected in backend/bootstrap/app.php
+No syntax errors detected in backend/config/cost-tracker.php
+No syntax errors detected in backend/config/filesystems.php
+No syntax errors detected in backend/database/migrations/2026_11_05_000001_create_billing_uploads_table.php
+No syntax errors detected in backend/database/migrations/2026_11_05_000002_create_billing_records_table.php
+No syntax errors detected in backend/database/migrations/2026_11_05_000003_create_budgets_table.php
+No syntax errors detected in backend/database/migrations/2026_11_05_000004_create_budget_alerts_table.php
+No syntax errors detected in backend/database/seeders/DatabaseSeeder.php
+No syntax errors detected in backend/routes/api.php
+No syntax errors detected in backend/routes/console.php
+No syntax errors detected in backend/routes/web.php
+No syntax errors detected in backend/scripts/verify-sample.php
+No syntax errors detected in backend/tests/Feature/UploadApiTest.php
+No syntax errors detected in backend/tests/TestCase.php
+No syntax errors detected in backend/tests/Unit/BudgetCheckerTest.php
+No syntax errors detected in backend/tests/Unit/CostAnalyzerTest.php
+No syntax errors detected in backend/tests/Unit/CsvParserTest.php
