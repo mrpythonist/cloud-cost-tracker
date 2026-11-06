@@ -1,0 +1,35 @@
+Command: cd frontend && npm run build
+Run: 2026-11-06, on this VM (npm install ran first). Exit code 0.
+---
+
+> build
+> next build
+
+  ▲ Next.js 14.2.5
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/7) ...
+   Generating static pages (1/7) 
+   Generating static pages (3/7) 
+   Generating static pages (5/7) 
+ ✓ Generating static pages (7/7)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    4.24 kB        98.1 kB
+├ ○ /_not-found                          871 B            88 kB
+├ ○ /budgets                             3.79 kB        90.9 kB
+├ ○ /compare                             2.86 kB          90 kB
+└ ○ /upload                              3.16 kB        90.3 kB
++ First Load JS shared by all            87.1 kB
+  ├ chunks/23-f2c2ec5da154e115.js        31.5 kB
+  ├ chunks/fd9d1056-62aaf4b921c84028.js  53.6 kB
+  └ other shared chunks (total)          1.95 kB
+
+
+○  (Static)  prerendered as static content
+
