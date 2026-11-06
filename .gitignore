@@ -14,12 +14,21 @@ backend/storage/*.key
 .env
 .env.local
 .env.*.local
+frontend/.env
 backend/.env
 frontend/.env.local
+
+# Test / coverage output
+.phpunit.result.cache
+backend/.phpunit.result.cache
+coverage/
+backend/coverage/
+*.tsbuildinfo
 
 # Uploaded billing CSVs (may contain real account data)
 backend/storage/app/private/billing-csv/
 backend/storage/app/billing-csv/
+storage/app/private/billing-csv/
 
 # Logs / caches
 *.log
@@ -30,8 +39,10 @@ backend/storage/framework/views/
 backend/storage/logs/
 frontend/.next/
 
-# IDE / OS
+# Editor / OS
 .idea/
 .vscode/
+*.swp
+*.swo
 .DS_Store
 Thumbs.db
